@@ -27,7 +27,7 @@ const RootStack = createStackNavigator(
     GameOver:{screen:GameOverScreen}
   },
   {
-    initialRouteName: 'WelcomeScreen',
+    initialRouteName: 'Welcome',
     // headerMode:'none',
     // navigationOptions:{
     //   headerVisible:false
@@ -38,9 +38,7 @@ const RootStack = createStackNavigator(
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <RootStack/>
-      </View>
+      <RootStack/>
     );
   }
 }

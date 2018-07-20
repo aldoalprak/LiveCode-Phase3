@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {observer} from 'mobx-react'
-import {View,Button} from 'react-native'
+import {View,Button,Text} from 'react-native'
 import Store from '../mobx/store'
 
 @observer class GameOver extends Component {
