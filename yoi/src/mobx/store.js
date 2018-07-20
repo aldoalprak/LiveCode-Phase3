@@ -2,15 +2,15 @@ import {observable,action} from 'mobx'
 
 class mobxStore {
     @observable state = {
-        print:"hello"
+        turn:1
     }
 
-    @action
-    tes() {
-        console.log("this.state=",this)
+    // @action
+    // tes() {
+    //     console.log("this.state=",this)
 
-        this.state.print = "hoa"
-    }
+    //     this.state.print = "hoa"
+    // }
 }
 
 export default Store = new mobxStore()
