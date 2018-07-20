@@ -8,8 +8,10 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Button} from 'react-native';
-import Store from './src/mobx/store'
-import {observer} from 'mobx-react'
+import WelcomeScreen from './src/containers/WelcomeScreen'
+import MainScreen from './src/containers/MainScreen'
+import GameOverScreen from './src/containers/GameOverScreen'
+import {createStackNavigator} from 'react-navigation'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,15 +20,26 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-@observer class App extends Component {
+const RootStack = createStackNavigator(
+  {
+    Welcome:{screen:WelcomeScreen},
+    Main:{screen:MainScreen},
+    GameOver:{screen:GameOverScreen}
+  },
+  {
+    initialRouteName: 'WelcomeScreen',
+    // headerMode:'none',
+    // navigationOptions:{
+    //   headerVisible:false
+    // }
+  }
+);
+
+class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <Text>{Store.state.print}</Text>
-                <Button onPress={()=>Store.tes()} title="hello world"/>
+        <RootStack/>
       </View>
     );
   }

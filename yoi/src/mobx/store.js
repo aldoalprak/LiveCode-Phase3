@@ -2,7 +2,7 @@ import {observable,action} from 'mobx'
 
 class mobxStore {
     @observable state = {
-        print:"llllpp"
+        print:"hello"
     }
 
     @action
