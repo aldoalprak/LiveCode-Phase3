@@ -4,11 +4,15 @@ import {View,Button,Text} from 'react-native'
 import Store from '../mobx/store'
 
 @observer class GameOver extends Component {
-    
+    goToPlay() {
+        this.props.navigation.navigate('Main')
+    }
+
     render() {
         return (
             <View>
                 <Text>Ini GameOver</Text>
+                <Button title="Play Again" onPress={this.goToPlay.bind(this)}/>
             </View>
         )
     }
